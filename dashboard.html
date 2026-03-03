@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EraScope - Research Publications Portal</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    height: 100vh;
+    background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #88a1ec;
+    color: black;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+/* Sidebar Items */
+.sidebar ul li {
+    margin: 15px 0;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.sidebar ul li:hover {
+    background-color: #5f7ee6;
+    color: white;
+}
+
+/* Click Effect */
+.sidebar ul li:active {
+    transform: scale(0.98);
+}
+
+/* Main Section */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-left i,
+.nav-right i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Content */
+.content {
+    padding: 40px;
+}
+
+/* Welcome Heading */
+.welcome-heading {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #2e59d9;
+}
+
+/* Dashboard Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #2e59d9;
+    margin-bottom: 10px;
+}
+
+/* Sidebar Toggle */
+.hide {
+    width: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="logo">
+        <img src="logo.png" alt="Graphic Era Logo">
+    </div>
+    <ul>
+        <li>Dashboard</li>
+        <li onclick="goToResearch()">Research Papers</li>
+        <li>Faculty</li>
+        <li>Analytics</li>
+        <li>Settings</li>
+    </ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-bars" onclick="toggleMenu()"></i>
+        </div>
+
+        <div class="nav-right">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <h1 class="welcome-heading">Welcome to EraScope</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h2>120+</h2>
+                <p>Total Research Papers</p>
+            </div>
+
+            <div class="card">
+                <h2>35</h2>
+                <p>Faculty Contributors</p>
+            </div>
+
+            <div class="card">
+                <h2>15</h2>
+                <p>Ongoing Projects</p>
+            </div>
+
+            <div class="card">
+                <h2>8</h2>
+                <p>Recent Publications</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("hide");
+}
+
+function goToResearch() {
+    window.location.href = "research.html";
+}
+</script>
+
+</body>
+</html>
